@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt">
+<head>
+    <title th:remove="all">Template for HTML email with inline image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<style>
+    .container {
+        width: 800px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .answers {
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .answers a {
+        padding: 10px;
+        background-color: #8257e6;
+        color: #FFFFFF;
+        border-radius: 6px;
+        width: 15px;
+        text-align: center;
+        text-decoration: none;
+        margin-left: 6px;
+    }
+
+    .level {
+        display: flex;
+        margin: 10px;
+        justify-content: space-between;
+        width: 350px;
+    }
+</style>
+<div class="container">
+    <label>Olá <strong th:text="${name}"></strong>! Tudo bem?</label>
+    <h3 th:text="${title}"></h3>
+    <br/>
+    <strong th:text="${description}"></strong>
+
+    <div class="level">
+        <span>Pouco provável</span>
+        <span>Muito provável</span>
+    </div>
+
+    <div class="answers">
+        <a th:href="@{${link} +'/1?u=' + ${userId} + '&su=' + ${surveyUserId}}">1</a>
+        <a th:href="@{${link} +'/2?u=' + ${userId} + '&su=' + ${surveyUserId}}">2</a>
+        <a th:href="@{${link} +'/3?u=' + ${userId} + '&su=' + ${surveyUserId}}">3</a>
+        <a th:href="@{${link} +'/4?u=' + ${userId} + '&su=' + ${surveyUserId}}">4</a>
+        <a th:href="@{${link} +'/5?u=' + ${userId} + '&su=' + ${surveyUserId}}">5</a>
+        <a th:href="@{${link} +'/6?u=' + ${userId} + '&su=' + ${surveyUserId}}">6</a>
+        <a th:href="@{${link} +'/7?u=' + ${userId} + '&su=' + ${surveyUserId}}">7</a>
+        <a th:href="@{${link} +'/8?u=' + ${userId} + '&su=' + ${surveyUserId}}">8</a>
+        <a th:href="@{${link} +'/9?u=' + ${userId} + '&su=' + ${surveyUserId}}">9</a>
+        <a th:href="@{${link} +'/10?u=' + ${userId} + '&su=' + ${surveyUserId}}">10</a>
+    </div>
+
+
+    <br/>
+    <br/>
+    <strong> Sua opinião é muito importante para nós</strong>
+    <h3> Equipe | <strong>Igor Sily</strong></h3>
+</div>
+
+</body>
+</html>
