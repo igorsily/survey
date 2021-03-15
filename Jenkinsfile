@@ -9,7 +9,6 @@ pipeline {
           version = pom.version
         }
 
-<<<<<<< HEAD
         stages
         {
           stage('Build App')
@@ -71,11 +70,6 @@ pipeline {
         //       sh "rm -rf ocp && mkdir -p ocp/deployments"
         //       sh "pwd && ls -la target "
         //       sh "cp target/bookstore-*.jar ocp/deployments"
-=======
-        sh 'mvn clean install -DskipTests=true'
-      }
-    }
->>>>>>> master
 
     stage('Initialize') {
       steps {
