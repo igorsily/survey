@@ -20,6 +20,18 @@
               sh "mvn clean install -DskipTests=true"
             }
           }
+           stage('Initialize') {
+            steps {
+                 script {
+                  def pom = readMavenPom file: 'pom.xml'
+                  version = pom.version
+              }
+                sh '''
+                    echo "PATH = ${version}"
+                    echo "M3 = ${M3}"
+                ''' 
+            }
+        }
           stage('Test')
           {
             steps
