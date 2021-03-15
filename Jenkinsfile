@@ -12,7 +12,7 @@
           {
             steps
              {
-              git branch: 'master', url: 'https://github.com/igorsily/survey.git'
+            //   git branch: 'master', url: 'https://github.com/igorsily/survey.git'
               script {
                   def pom = readMavenPom file: 'pom.xml'
                   version = pom.version
