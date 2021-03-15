@@ -71,28 +71,6 @@ pipeline {
         //       sh "pwd && ls -la target "
         //       sh "cp target/bookstore-*.jar ocp/deployments"
 
-    stage('Initialize') {
-      steps {
-        script {
-          def pom = readMavenPom file: 'pom.xml'
-          version = pom.version
-        }
-
-        sh '''
-                    echo "PATH = ${version}"
-                    echo "M3 = ${M3}"
-                '''
-      }
-    }
-
-    stage('Test') {
-      steps {
-        sh "${mvnCmd} test -Dspring.profiles.active=test"
-      }
-    }
-
   }
-  tools {
-    maven 'M3'
-  }
+
 }
